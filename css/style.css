@@ -21,6 +21,8 @@ a {
 /* 各セレクタ */
 img {
   border: 0;
+  max-width: 100%;
+  height: auto;
 }
 h1 {
   font-size: 48px;
@@ -49,6 +51,21 @@ a {
   font-weight: 500;
   font-style: normal;
   text-decoration: none;
+}
+
+/* フォントサイズの調整 */
+@media (width < 768px) {
+  h1,
+  h2 {
+    font-size: 32px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+  a {
+    font-size: 14px;
+  }
 }
 
 .link:link {
@@ -80,6 +97,11 @@ a {
   font-weight: 400;
   font-feature-settings: "palt";
   letter-spacing: 0.06em;
+}
+/* レイアウト調整用 */
+.space {
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 /* 日本語 */
@@ -127,6 +149,36 @@ a {
   letter-spacing: 0.18em;
   font-feature-settings: "palt";
 }
+@media (width < 768px) {
+  .category {
+    font-size: 24px;
+  }
+  .tt,
+  .white {
+    font-size: 20px;
+  }
+  .description,
+  .item-name {
+    font-size: 16px;
+  }
+  .text,
+  .bold {
+    font-size: 14px;
+  }
+  /* 横幅余白調整 */
+  .header-inner,
+  .message,
+  .contents-title,
+  .web-wrapper,
+  .graphic-wrapper,
+  .others-wrapper,
+  .skill-list,
+  .profile-wrapper,
+  .like-wrapper,
+  .thankyou {
+    max-width: 94%;
+  }
+}
 
 /* レイアウト指定 */
 
@@ -141,7 +193,8 @@ header {
 }
 
 .header-inner {
-  max-width: 1000px;
+  width: 1000px;
+  max-width: 96%;
   height: 120px;
   margin: auto;
   display: flex;
@@ -152,6 +205,7 @@ header {
   width: 180px;
   height: 80px;
 }
+
 .menu-nav {
   display: flex;
   column-gap: 80px;
@@ -178,6 +232,21 @@ header {
   -webkit-text-stroke-color: transparent;
 }
 
+/* ヘッダーをロゴのみ、メニューをハンバーガーにする */
+
+@media (width < 768px) {
+  .logo {
+    min-width: 80px;
+    min-height: 60px;
+  }
+  .nav {
+    font-size: 28px;
+  }
+  .menu-nav {
+    display: none;
+  }
+}
+
 /* -----header----- */
 
 /* メインビジュアル */
@@ -190,18 +259,17 @@ header {
   height: 100vh;
   margin-bottom: 200px;
 }
-
 .layout {
-  position: absolute;
   width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
+
 .message {
-  max-width: 1000px;
+  width: 1000px;
   margin: 0 auto;
+  max-width: 96%;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -219,15 +287,25 @@ header {
   text-shadow: 4px 4px 12px rgba(78, 82, 79, 0.2);
 }
 
+/* メインビジュアルの調整 */
+
+@media (width < 768px) {
+  .visual-text {
+    font-size: 14px;
+  }
+}
+
 /* コンテンツ共通部分 */
 .contents {
-  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 120px;
 }
 .contents-title {
+  width: 1000px;
+  max-width: 96%;
+  margin: 0 auto;
   color: #e07578;
   display: flex;
   align-items: baseline;
@@ -249,22 +327,32 @@ header {
   color: #e07578;
 }
 
+@media (width < 768px) {
+  .content-text {
+    font-size: 18px;
+  }
+  .sub-heading{
+    flex-direction: column;
+  }
+}
+
 /* -----Works----- */
 
 /* Web */
 .web {
   width: 100vw;
-  margin: 0 calc(50% - 50vw);
   background-color: #f0faf0;
   padding: 48px 0;
 }
 .web-wrapper {
   width: 1000px;
+  max-width: 96%;
   margin: 0 auto;
 }
 .w-preview {
   margin-bottom: 48px;
 }
+
 .w-text {
   display: flex;
   gap: 48px;
@@ -301,20 +389,38 @@ header {
   gap: 8px;
 }
 
+@media (width < 768px) {
+  .list {
+    font-size: 14px;
+  }
+  .w-text {
+    flex-direction: column;
+  }
+  .side-text {
+    flex-direction: row;
+    padding-left: 0;
+    border-left: 0 solid #000;
+  }
+}
+
 /* graphic */
 .graphic-wrapper {
   padding: 96px 0;
+  width: 1000px;
+  max-width: 96%;
+  margin: 0 auto;
 }
 .g-production {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 48px;
 }
 .preview {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 24px;
 }
+
 .title {
   display: flex;
   flex-direction: column;
@@ -323,18 +429,19 @@ header {
 
 /* others */
 .others {
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
   background-color: #f0faf0;
   padding: 48px 0;
 }
 .others-wrapper {
   width: 1000px;
+  max-width: 96%;
   margin: 0 auto;
 }
+
 .Slide-image {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 /* -----Works----- */
@@ -345,6 +452,9 @@ header {
   display: flex;
   flex-direction: column;
   gap: 48px;
+  width: 1000px;
+  max-width: 96%;
+  margin: 0 auto;
 }
 
 .skillcolumn {
@@ -366,18 +476,20 @@ header {
 
 /* About me */
 .aboutme-wrapper {
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
+  width: 100%;
   background-color: #f0faf0;
   padding: 48px 0;
 }
 .profile-wrapper {
   width: 1000px;
+  max-width: 96%;
   margin: 0 auto;
   display: flex;
+  align-items: center;
   gap: 80px;
 }
 .profile-picture img {
+  min-width: 140px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -389,9 +501,18 @@ header {
 .long {
   line-height: 2;
 }
+@media (width < 768px) {
+  .profile-wrapper {
+    flex-direction: column;
+  }
+}
+
 
 /* Like */
 .like-wrapper {
+  width: 1000px;
+  max-width: 96%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -419,9 +540,39 @@ header {
   color: #e07578;
 }
 
+@media (width < 768px) {
+  .like-column {
+    flex-direction: column;
+  }
+  .like-title {
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-right: none;
+    border-bottom: 1px solid #e07578;
+    align-items: baseline;
+  }
+  .like-text {
+    padding: 0;
+    gap: 8px;
+  }
+}
+
 /* Thank you */
 .thankyou {
+  width: 1000px;
+  max-width: 96%;
+  margin: 0 auto;
   margin-bottom: 240px;
+}
+.thankyou-title {
+  margin: 0 auto;
+  color: #e07578;
+  display: flex;
+  align-items: baseline;
+  gap: 32px;
+  margin-bottom: 64px;
 }
 .mail {
   color: #e07578;
@@ -452,4 +603,12 @@ small {
   font-family: "Noto sans";
   font-weight: 500;
   letter-spacing: 0.08em;
+}
+@media (width < 768px) {
+  .item-text {
+    font-size: 16px;
+  }
+  small {
+    font-size: 12px;
+  }
 }
