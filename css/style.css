@@ -53,20 +53,6 @@ a {
   text-decoration: none;
 }
 
-/* フォントサイズの調整 */
-@media (width < 768px) {
-  h1,
-  h2 {
-    font-size: 32px;
-  }
-
-  li {
-    font-size: 14px;
-  }
-  a {
-    font-size: 14px;
-  }
-}
 
 .link:link {
   color: #75b3e0;
@@ -149,36 +135,6 @@ a {
   letter-spacing: 0.18em;
   font-feature-settings: "palt";
 }
-@media (width < 768px) {
-  .category {
-    font-size: 24px;
-  }
-  .tt,
-  .white {
-    font-size: 20px;
-  }
-  .description,
-  .item-name {
-    font-size: 16px;
-  }
-  .text,
-  .bold {
-    font-size: 14px;
-  }
-  /* 横幅余白調整 */
-  .header-inner,
-  .message,
-  .contents-title,
-  .web-wrapper,
-  .graphic-wrapper,
-  .others-wrapper,
-  .skill-list,
-  .profile-wrapper,
-  .like-wrapper,
-  .thankyou {
-    max-width: 94%;
-  }
-}
 
 /* レイアウト指定 */
 
@@ -232,7 +188,7 @@ header {
   -webkit-text-stroke-color: transparent;
 }
 
-/* ヘッダーをロゴのみ、メニューをハンバーガーにする */
+/* ヘッダーロゴのみ */
 
 @media (width < 768px) {
   .logo {
@@ -290,6 +246,10 @@ header {
 /* メインビジュアルの調整 */
 
 @media (width < 768px) {
+  .visual {
+    background-size: contain;
+    height: 80vh;
+  }
   .visual-text {
     font-size: 14px;
   }
@@ -331,7 +291,7 @@ header {
   .content-text {
     font-size: 18px;
   }
-  .sub-heading{
+  .sub-heading {
     flex-direction: column;
   }
 }
@@ -400,6 +360,9 @@ header {
     flex-direction: row;
     padding-left: 0;
     border-left: 0 solid #000;
+  }
+  .preview-list {
+    display: none;
   }
 }
 
@@ -507,7 +470,6 @@ header {
   }
 }
 
-
 /* Like */
 .like-wrapper {
   width: 1000px;
@@ -610,5 +572,52 @@ small {
   }
   small {
     font-size: 12px;
+  }
+}
+
+/* フォントサイズの調整 */
+@media (width < 768px) {
+  h1,
+  h2 {
+    font-size: 32px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+  a {
+    font-size: 14px;
+  }
+  img {
+    width: 100%;
+  }
+  .category {
+    font-size: 24px;
+  }
+  .tt,
+  .white {
+    font-size: 20px;
+  }
+  .description,
+  .item-name {
+    font-size: 16px;
+  }
+  .text,
+  .bold {
+    font-size: 14px;
+  }
+
+  /* 横幅余白調整 */
+  .header-inner,
+  .message,
+  .contents-title,
+  .web-wrapper,
+  .graphic-wrapper,
+  .others-wrapper,
+  .skill-list,
+  .profile-wrapper,
+  .like-wrapper,
+  .thankyou {
+    max-width: 90%;
   }
 }
